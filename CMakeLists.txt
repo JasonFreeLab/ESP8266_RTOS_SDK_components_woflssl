@@ -1,10 +1,5 @@
 if(CONFIG_TLS_STACK_WOLFSSL)
 
-set(include_dirs "." 
-                 "include")
-
-set(priv_include_dirs "../freertos/include/freertos/")
-
 set(srcs "src/bio.c"
          "src/crl.c"
          "src/internal.c"
@@ -80,8 +75,13 @@ set(srcs "src/bio.c"
          "wolfcrypt/src/wolfevent.c"
          "wolfcrypt/src/wolfmath.c")
 
+set(include_dirs "."
+                 "include")
+
+set(priv_include_dirs "../freertos/include/freertos/")
+
 idf_component_register(SRCS "${srcs}"
-                    INCLUDE_DIRS "${include_dirs}"
-                    PRIV_INCLUDE_DIRS "${priv_include_dirs}")
+                       INCLUDE_DIRS "${include_dirs}"
+                       PRIV_INCLUDE_DIRS "${priv_include_dirs}")
 
 endif()
