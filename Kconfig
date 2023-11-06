@@ -9,6 +9,6 @@ menu "wolfSSL"
 
     config WOLFSSL_HAVE_ALPN
         bool "Enable ALPN (Application Layer Protocol Negotiation) in wolfSSL"
-        default y
+        default n
 
 endmenu # wolfSSL
